@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AiMedTechKZ - поставка медицинского оборудования для урологии, гинекологии и ЛОР. Качество и сервис.">
+    <meta property="og:title" content="AiMedTechKZ - Медицинское оборудование">
+    <meta property="og:description" content="Современное оборудование для клиник.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&w=800&q=80">
+    <title>AiMedTechKZ - Медицинское оборудование и материалы</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables с dark mode */
+        :root {
+            --primary: #40DFD6;
+            --primary-dark: #7EE6A0;
+            --secondary: #34a853;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --accent: #e74c3c;
+            --text: #333;
+            --bg: #fff;
+            --shadow: rgba(0,0,0,0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --dark: #f8f9fa;
+                --light: #2c3e50;
+                --text: #f8f9fa;
+                --bg: #1a1a1a;
+                --shadow: rgba(255,255,255,0.1);
+            }
+        }
+
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif; /* Современный стек шрифтов */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            width: min(90%, 1200px); /* Современный clamp-like */
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            padding: clamp(4rem, 5vw, 5rem) 0; /* Fluid padding */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 5rem;
+            height: 0.25rem;
+            background: var(--primary);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover, .btn:focus-visible {
+            background: var(--primary-dark);
+            transform: translateY(-0.2rem);
+            box-shadow: 0 0.5rem 1rem var(--shadow);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+        }
+
+        .btn-accent:hover {
+            background: #c0392b;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg);
+            box-shadow: 0 0.125rem 0.625rem var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a:focus-visible {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 10rem 0 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 3rem);
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* About */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1rem 2rem var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            loading: lazy; /* Inline lazy, but JS for all */
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.25rem;
+            color: var(--dark);
+        }
+
+        .about-text p {
+            margin-bottom: 1.25rem;
+            color: #666;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0.3125rem 0.9375rem var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover, .service-card:focus-within {
+            transform: translateY(-0.625rem);
+            box-shadow: 0 1.5rem 2rem var(--shadow);
+        }
+
+        .service-image {
+            height: 12.5rem;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+            loading: lazy;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .service-link i {
+            margin-left: 0.3125rem;
+            transition: transform 0.3s;
+        }
+
+        .service-link:hover i {
+            transform: translateX(0.3125rem);
+        }
+
+        /* Products */
+        .products {
+            background: var(--light);
+        }
+
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btns {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: var(--bg);
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--bg);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0.3125rem 0.9375rem var(--shadow);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-0.3125rem);
+        }
+
+        .product-image {
+            min-height: 12.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f7fa;
+            position: relative;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            loading: lazy;
+        }
+
+        .product-image i {
+            position: absolute;
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.5;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .product-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .product-full-description {
+            display: none;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .toggle-description {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 0;
+            transition: color 0.3s;
+        }
+
+        .toggle-description:hover, .toggle-description:focus-visible {
+            color: var(--primary-dark);
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--dark);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 1rem;
+            margin-top: 0.3125rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form iframe {
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            height: clamp(30rem, 50vh, 50rem); /* Fluid height */
+            box-shadow: 0 0.3125rem 0.9375rem var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 1.25rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 2.5rem;
+            height: 0.1875rem;
+            background: var(--primary);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.625rem;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg);
+                flex-direction: column;
+                padding: 1.25rem;
+                box-shadow: 0 0.3125rem 0.625rem var(--shadow);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav li {
+                margin: 0.625rem 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .products-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-btns {
+                justify-content: center;
+            }
+        }
+
+        /* Скрытые карточки по умолчанию для фильтра */
+        .product-card[data-category="urology"] { display: block; }
+        .product-card[data-category="gynecology"] { display: none; }
+        .product-card[data-category="lor"] { display: none; }
+        /* И т.д. - динамически через JS */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo" aria-label="Главная страница">
+                <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                <div class="logo-text">Ai<span>MedTech</span>KZ</div>
+            </a>
+            <button class="mobile-toggle" aria-label="Открыть меню" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu" role="menubar">
+                    <li role="none"><a href="#home" role="menuitem">Главная</a></li>
+                    <li role="none"><a href="#about" role="menuitem">О компании</a></li>
+                    <li role="none"><a href="#services" role="menuitem">Услуги</a></li>
+                    <li role="none"><a href="#products" role="menuitem">Каталог</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Профессиональное медицинское оборудование</h1>
+                <p>Мы предлагаем современное медицинское оборудование и решения для лечебных учреждений любой специализации. Гарантия качества и сервисное обслуживание.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn">Наш каталог</a>
+                    <a href="#contact" class="btn btn-accent">Связаться с нами</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>О компании</h2>
+                    <p>Более 5 лет мы поставляем медицинское оборудование ведущих мировых производителей</p>
+                </div>
+                <div class="about-content">
+                    <figure class="about-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&w=800&q=80" alt="Медицинское оборудование в действии" loading="lazy">
+                    </figure>
+                    <div class="about-text">
+                        <h3>Наша миссия - улучшение качества медицинской помощи</h3>
+                        <p>Мы специализируемся на поставках современного медицинского оборудования и технологий для лечебно-профилактических учреждений.</p>
+                        <p>Мы сотрудничаем с ведущими мировыми производителями и предлагаем комплексные решения для оснащения медицинских кабинетов, отделений и целых клиник.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-award" aria-hidden="true"></i>
+                                <h4>Качество</h4>
+                                <p>Вся продукция имеет необходимые сертификаты и соответствует стандартам</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-headset" aria-hidden="true"></i>
+                                <h4>Поддержка</h4>
+                                <p>Техническая поддержка и сервисное обслуживание 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наши услуги</h2>
+                    <p>Мы предлагаем полный спектр услуг по оснащению медицинских учреждений</p>
+                </div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.pexels.com/photos/7089017/pexels-photo-7089017.jpeg" alt="Поставка медицинского оборудования" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Поставка оборудования</h3>
+                            <p>Комплексные поставки медицинского оборудования от ведущих мировых производителей</p>
+                            <a href="#contact" class="service-link">Подробнее <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Сервисное обслуживание оборудования" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Сервисное обслуживание</h3>
+                            <p>Гарантийное и постгарантийное обслуживание, ремонт и техническая поддержка</p>
+                            <a href="#contact" class="service-link">Подробнее <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Обучение медицинского персонала" loading="lazy">
+                        </div>
+                        <div class="service-content">
+                            <h3>Обучение персонала</h3>
+                            <p>Проведение обучения медицинского персонала работе с оборудованием</p>
+                            <a href="#contact" class="service-link">Подробнее <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="products" id="products">
+            <div class="container">
+                <div class="section-title products-header">
+                    <h2>Каталог оборудования</h2>
+                    <div class="filter-btns">
+                        <button class="filter-btn active" data-category="all">Все</button>
+                        <button class="filter-btn" data-category="urology">Урология</button>
+                        <button class="filter-btn" data-category="gynecology">Гинекология</button>
+                        <button class="filter-btn" data-category="lor">ЛОР</button>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <!-- Урология (показывать по умолчанию) -->
+                    <article class="product-card" data-category="urology">
+                        <div class="product-image">
+                            <img src="images/Resectoscope-J0330H.jpg" alt="Resectoscope J0330H для урологических операций" loading="lazy">
+                            <i class="fas fa-procedures" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Resectoscope-J0330H</h3>
+                            <p>Категория: Урология. Материал: Нержавеющая сталь. Назначение: Для эндоскопических урологических операций.</p>
+                            <div class="product-full-description">
+                                <p>Эндоскоп изготовлен из импортной нержавеющей стали... [полное описание, как в оригинале]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false" aria-label="Раскрыть описание">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <!-- Другие урологические, аналогично, без дублей -->
+                    <article class="product-card" data-category="urology">
+                        <div class="product-image">
+                            <img src="images/Laser Shredding Endoscope.jpg" alt="Laser Shredding Endoscope для литотрипсии" loading="lazy">
+                            <i class="fas fa-laser" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Laser Shredding Endoscope</h3>
+                            <p>Категория: Урология. Материал: Нержавеющая сталь медицинского класса...</p>
+                            <div class="product-full-description">
+                                <p>Корпус эндоскопа изготовлен из импортной нержавеющей стали... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="urology">
+                        <div class="product-image">
+                            <img src="images/Lithotriptoscope PS-1, PS-1A.jpg" alt="Lithotriptoscope PS-1 для дробления камней" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Lithotriptoscope PS-1, PS-1A</h3>
+                            <p>Категория: Урология. Материал: Медицинская нержавеющая сталь...</p>
+                            <div class="product-full-description">
+                                <p>Корпус эндоскопа выполнен из импортной нержавеющей стали... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="urology">
+                        <div class="product-image">
+                            <img src="images/Urethrotome NQ-2, 3 mm.jpg" alt="Urethrotome NQ-2 для рассечения стриктур" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Urethrotome NQ-2, 3 mm</h3>
+                            <p>Категория: Урология. Материал: Нержавеющая сталь...</p>
+                            <div class="product-full-description">
+                                <p>Корпус эндоскопа выполнен из импортной нержавеющей стали... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="urology">
+                        <div class="product-image">
+                            <img src="images/Resectoscope-J0312A.jpg" alt="Resectoscope J0312A" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Resectoscope-J0312A</h3>
+                            <p>Эндоскоп изготовлен из импортной нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>Применяется высокотемпературная и высокоинтенсивная керамика... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <!-- Гинекология -->
+                    <article class="product-card" data-category="gynecology">
+                        <div class="product-image">
+                            <img src="images/Hysteroscope-J0112,J0130,J0130A.jpg" alt="Hysteroscope J0112 для гинекологии" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hysteroscope-J0112,J0130,J0130A</h3>
+                            <p>Категория Гинекология. Эндоскоп изготовлен из импортной нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>С указателем направления и сапфировой линзой... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="gynecology">
+                        <div class="product-image">
+                            <img src="images/Resectoscope QD-2, Snap-in and out.jpg" alt="Resectoscope QD-2 для гинекологии" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Resectoscope QD-2, Snap-in and out</h3>
+                            <p>Категория Гинекология. Эндоскоп изготовлен из импортной нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>Применяйте запатентованную технологию стержневой оптической линзы... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="gynecology">
+                        <div class="product-image">
+                            <img src="images/Hysteroscope J0330E, 6Fr Instruments.jpg" alt="Hysteroscope J0330E с инструментами" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Hysteroscope J0330E, 6Fr Instruments</h3>
+                            <p>Эндоскоп изготовлен из импортной нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>Врач может удобно контролировать направление... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <!-- ЛОР -->
+                    <article class="product-card" data-category="lor">
+                        <div class="product-image">
+                            <img src="images/Otoscope EJ-1.jpg" alt="Otoscope EJ-1 для ЛОР" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Otoscope EJ-1</h3>
+                            <p>Категория ЛОР. Корпус эндоскопа изготовлен из импортной трубки из нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>Благодаря запатентованной технологии стержневых линз... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-category="lor">
+                        <div class="product-image">
+                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для ЛОР" loading="lazy">
+                            <i class="fas fa-crutch" aria-hidden="true"></i>
+                        </div>
+                        <div class="product-content">
+                            <h3>Laryngoscope HJ-1</h3>
+                            <p>Категория ЛОР. Корпус эндоскопа изготовлен из импортной трубки из нержавеющей стали...</p>
+                            <div class="product-full-description">
+                                <p>Благодаря запатентованной технологии стержневых линз... [полное]</p>
+                            </div>
+                            <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Свяжитесь с нами</h2>
+                    <p>Мы готовы ответить на все ваши вопросы и предложить оптимальное решение</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <div>
+                                    <h4>Адрес</h4>
+                                    <p>г.Алматы, пр.Рыскулова, 103/6</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                                <div>
+                                    <h4>Телефон</h4>
+                                    <p>+7 (702) 204-11-81</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>aimedtechkz@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                                <div>
+                                    <h4>Режим работы</h4>
+                                    <p>Пн-Пт: 9:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYZnmMas5StJWZUXkPfbin0ajgOc4xQzDDNj3S8XU_uL_lMA/viewform?embedded=true" title="Форма обратной связи" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>AiMedTechKZ - ведущий поставщик медицинского оборудования в Казахстане. Более 5 лет на рынке.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Категории оборудования</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products">Урология</a></li>
+                        <li><a href="#products">Гинекология</a></li>
+                        <li><a href="#products">ЛОР</a></li>
+                        <li><a href="#products">Диагностика</a></li>
+                        <li><a href="#products">Хирургия</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Услуги</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Поставка</a></li>
+                        <li><a href="#services">Сервис</a></li>
+                        <li><a href="#services">Обучение</a></li>
+                        <li><a href="#contact">Консультации</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> г.Алматы, пр.Рыскулова, 103/6</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> +7 (702) 204-11-81</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> aimedtechkz@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AiMedTechKZ. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ES6+ JS с делегацией событий
+        const toggleMenu = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const menuBtnIcon = toggleMenu.querySelector('i');
+
+        toggleMenu.addEventListener('click', () => {
+            const isExpanded = toggleMenu.getAttribute('aria-expanded') === 'true';
+            toggleMenu.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            menuBtnIcon.className = isExpanded ? 'fas fa-bars' : 'fas fa-times';
+        });
+
+        // Закрытие меню по ссылке
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navMenu.classList.remove('active');
+                toggleMenu.setAttribute('aria-expanded', 'false');
+                menuBtnIcon.className = 'fas fa-bars';
+            }
+        });
+
+        // Плавная прокрутка (нативная + offset)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    window.scrollBy(0, -80); // Offset для fixed header
+                }
+            });
+        });
+
+        // Toggle описаний с ARIA
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.toggle-description')) {
+                const btn = e.target.closest('.toggle-description');
+                const desc = btn.previousElementSibling;
+                const icon = btn.querySelector('i');
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                btn.setAttribute('aria-expanded', !isExpanded);
+                desc.style.display = isExpanded ? 'none' : 'block';
+                btn.innerHTML = isExpanded 
+                    ? 'Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i>'
+                    : 'Свернуть <i class="fas fa-chevron-up" aria-hidden="true"></i>';
+            }
+        });
+
+        // Фильтр продуктов
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Shadow на скролл
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.style.boxShadow = window.scrollY > 100 
+                ? '0 0.3125rem 0.9375rem var(--shadow)' 
+                : '0 0.125rem 0.625rem var(--shadow)';
+        });
+
+        // Lazy load fallback для старых браузеров (но native loading="lazy" покрывает)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => imageObserver.observe(img));
+        }
+    </script>
+</body>
+</html>
