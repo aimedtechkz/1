@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AiMedTechKZ - поставка медицинского оборудования для урологии, гинекологии и ЛОР. Качество и сервис.">
+    <meta name="description" content="AiMedTechKZ - поставка медицинского оборудования для урологии, гинекологии, ЛОР, ортопедия, общая хирургия и электрооборудование. Качество и сервис.">
     <meta property="og:title" content="AiMedTechKZ - Медицинское оборудование">
     <meta property="og:description" content="Современное оборудование для клиник.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&w=800&q=80">
@@ -635,6 +635,9 @@
         .product-card[data-category="urology"] { display: block; }
         .product-card[data-category="gynecology"] { display: none; }
         .product-card[data-category="lor"] { display: none; }
+        .product-card[data-category="orthopedics"] { display: none; }
+        .product-card[data-category="general surgery"] { display: none; }
+        .product-card[data-category="electrical equipment"] { display: none; }
         /* И т.д. - динамически через JS */
     </style>
 </head>
@@ -753,6 +756,9 @@
                         <button class="filter-btn" data-category="urology">Урология</button>
                         <button class="filter-btn" data-category="gynecology">Гинекология</button>
                         <button class="filter-btn" data-category="lor">ЛОР</button>
+                        <button class="filter-btn" data-category="orthopedics">Ортопедия</button>
+                        <button class="filter-btn" data-category="general surgery">Общая Хирургия</button>
+                        <button class="filter-btn" data-category="electrical equipment">Электрооборудование</button>
                     </div>
                 </div>
                 <div class="products-grid">
@@ -913,10 +919,10 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <!-- ОРТОПЕДИЯ -->
-                    <article class="product-card" data-category="lor">
+                    <!-- Ортопедия -->
+                    <article class="product-card" data-category="Orthopedics">
                         <div class="product-image">
-                            <img src="images/Arthroscope.jpg" alt="Arthroscope для ОРТОПЕДИЯ" loading="lazy">
+                            <img src="images/Arthroscope.jpg" alt="Arthroscope для Ортопедия" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -931,10 +937,10 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <!-- ОБЩАЯ ХИРУРГИЯ -->
-                    <article class="product-card" data-category="lor">
+                    <!-- Общая Хирургия -->
+                    <article class="product-card" data-category="general surgery">
                         <div class="product-image">
-                            <img src="images/Laparoscope DF.jpg" alt="Laparoscope DF для ОБЩАЯ ХИРУРГИЯ" loading="lazy">
+                            <img src="images/Laparoscope DF.jpg" alt="Laparoscope DF для Общая Хирургия" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -946,10 +952,10 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <!-- ЭЛЕКТРООБОРУДОВАНИЕ -->
-                    <article class="product-card" data-category="lor">
+                    <!-- Электрооборудование -->
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/U9421 Peritoneum Cleaner QXQ-1000J.jpg" alt="U9421 Peritoneum Cleaner QXQ-1000J для ЭЛЕКТРООБОРУДОВАНИЕ" loading="lazy">
+                            <img src="images/U9421 Peritoneum Cleaner QXQ-1000J.jpg" alt="U9421 Peritoneum Cleaner QXQ-1000J для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -961,9 +967,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/DG-1 Uteri Auto Inflate and Pressure.jpg" alt="DG-1 Uteri Auto Inflate and Pressure для ЭЛЕКТРООБОРУДОВАНИЕ" loading="lazy">
+                            <img src="images/DG-1 Uteri Auto Inflate and Pressure.jpg" alt="DG-1 Uteri Auto Inflate and Pressure для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -975,9 +981,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/Ультрафрезерный стоматологический станок 5T.jpg" alt="Ультрафрезерный стоматологический станок 5T для ЭЛЕКТРООБОРУДОВАНИЕ" loading="lazy">
+                            <img src="images/Ультрафрезерный стоматологический станок 5T.jpg" alt="Ультрафрезерный стоматологический станок 5T для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -989,9 +995,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/5-осевой стоматологический станок для влажного фрезерования.jpg" alt="5-осевой стоматологический станок для влажного фрезерования для ЭЛЕКТРООБОРУДОВАНИЕ" loading="lazy">
+                            <img src="images/5-осевой стоматологический станок для влажного фрезерования.jpg" alt="5-осевой стоматологический станок для влажного фрезерования для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -1003,9 +1009,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для ЛОР" loading="lazy">
+                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -1017,9 +1023,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для ЛОР" loading="lazy">
+                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -1031,9 +1037,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для ЛОР" loading="lazy">
+                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
@@ -1045,9 +1051,9 @@
                             <button class="toggle-description" aria-expanded="false">Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         </div>
                     </article>
-                    <article class="product-card" data-category="lor">
+                    <article class="product-card" data-category="electrical equipment">
                         <div class="product-image">
-                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для ЛОР" loading="lazy">
+                            <img src="images/Laryngoscope HJ-1.jpg" alt="Laryngoscope HJ-1 для Электрооборудование" loading="lazy">
                             <i class="fas fa-crutch" aria-hidden="true"></i>
                         </div>
                         <div class="product-content">
