@@ -1332,14 +1332,10 @@
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const category = link.dataset.category;
-                
-                // Активируем фильтр (клик по кнопке)
                 const filterBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
                 if (filterBtn) {
                     filterBtn.click(); // Это вызовет существующий фильтр JS
                 }
-                
-                // Скролл к секции (используя существующий обработчик, но с offset)
                 const target = document.querySelector('#products');
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
