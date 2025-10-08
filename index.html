@@ -586,6 +586,10 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        section[id] {
+            scroll-margin-top: 80px;
+        }
 
         @media (max-width: 768px) {
             nav ul {
@@ -1241,8 +1245,10 @@
                 e.preventDefault();
                 const target = document.querySelector(anchor.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    window.scrollBy(0, -80); // Offset для fixed header
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
