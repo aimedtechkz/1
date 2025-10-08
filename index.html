@@ -645,16 +645,16 @@
                 justify-content: center;
             }
         }
-
-        /* Скрытые карточки по умолчанию для фильтра */
-        .product-card[data-category="urology"] { display: block; }
-        .product-card[data-category="gynecology"] { display: none; }
-        .product-card[data-category="lor"] { display: none; }
-        .product-card[data-category="orthopedics"] { display: none; }
-        .product-card[data-category="general-surgery"] { display: none; }
-        .product-card[data-category="electrical-equipment"] { display: none; }
-        .product-card[data-category="dental-equipment"] { display: none; }
-        /* И т.д. - динамически через JS */
+        
+        <ul class="footer-links">
+        <li><a href="#products" data-category="urology">Урология</a></li>
+        <li><a href="#products" data-category="gynecology">Гинекология</a></li>
+        <li><a href="#products" data-category="lor">ЛОР</a></li>
+        <li><a href="#products" data-category="orthopedics">Ортопедия</a></li>
+        <li><a href="#products" data-category="general-surgery">Общая хирургия</a></li>
+        <li><a href="#products" data-category="electrical-equipment">Электрооборудование</a></li>
+        <li><a href="#products" data-category="dental-equipment">Стоматологическое оборудование</a></li>
+    </ul>
     </style>
 </head>
 <body>
@@ -1335,7 +1335,27 @@
                 }
             });
         });
-
+        
+        // Обработка ссылок футера: скролл + авто-фильтр
+        document.querySelectorAll('.footer-links a[data-category]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = link.dataset.category;
+                
+                // Активируем фильтр (клик по кнопке)
+                const filterBtn = document.querySelector(`.filter-btn[data-category="${category}"]`);
+                if (filterBtn) {
+                    filterBtn.click(); // Это вызовет существующий фильтр JS
+                }
+                
+                // Скролл к секции (используя существующий обработчик, но с offset)
+                const target = document.querySelector('#products');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
         // Toggle описаний с ARIA
         document.addEventListener('click', (e) => {
             if (e.target.closest('.toggle-description')) {
