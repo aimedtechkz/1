@@ -121,7 +121,20 @@
         .btn-accent:hover {
             background: #c0392b;
         }
-
+        
+        .hero .btn {
+            background: white;
+            color: var(--dark);
+            text-shadow: none;
+        }
+        
+        .hero .btn:hover, .hero .btn:focus-visible {
+            background: #f8f9fa;
+            color: var(--dark);
+            transform: translateY(-0.2rem);
+            box-shadow: 0 0.5rem 1rem var(--shadow);
+        }
+        
         /* Header */
         header {
             background: var(--bg);
