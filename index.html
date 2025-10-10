@@ -1324,12 +1324,15 @@
         const toggleMenu = document.querySelector('.mobile-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const menuBtnIcon = toggleMenu.querySelector('i');
-
         toggleMenu.addEventListener('click', () => {
+            // Сначала toggle состояния
             const isExpanded = toggleMenu.getAttribute('aria-expanded') === 'true';
-            toggleMenu.setAttribute('aria-expanded', !isExpanded);
+            const newExpanded = !isExpanded;  // Вычисляем новое состояние
+            toggleMenu.setAttribute('aria-expanded', newExpanded);
             navMenu.classList.toggle('active');
-            menuBtnIcon.className = isExpanded ? 'fas fa-bars' : 'fas fa-times';
+            
+            // Теперь проверяем новое состояние для иконки
+            menuBtnIcon.className = newExpanded ? 'fas fa-times' : 'fas fa-bars';  // Логика: true (открыто) → times (закрыть), false → bars (открыть)
         });
 
         // Закрытие меню по ссылке
