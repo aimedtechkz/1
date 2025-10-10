@@ -1325,14 +1325,13 @@
         toggleMenu.addEventListener('click', () => {
             // Сначала toggle состояния
             const isExpanded = toggleMenu.getAttribute('aria-expanded') === 'true';
-            const newExpanded = !isExpanded;  // Вычисляем новое состояние
+            const newExpanded = !isExpanded; // Вычисляем новое состояние
             toggleMenu.setAttribute('aria-expanded', newExpanded);
             navMenu.classList.toggle('active');
-            
+           
             // Теперь проверяем новое состояние для иконки
-            menuBtnIcon.className = newExpanded ? 'fas fa-times' : 'fas fa-bars';  // Логика: true (открыто) → times (закрыть), false → bars (открыть)
+            menuBtnIcon.className = newExpanded ? 'fas fa-times' : 'fas fa-bars'; // Логика: true (открыто) → times (закрыть), false → bars (открыть)
         });
-
         // Закрытие меню по ссылке
         navMenu.addEventListener('click', (e) => {
             if (e.target.tagName === 'A') {
@@ -1341,7 +1340,6 @@
                 menuBtnIcon.className = 'fas fa-bars';
             }
         });
-
         // Плавная прокрутка (нативная + offset)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
@@ -1355,7 +1353,7 @@
                 }
             });
         });
-        
+       
         // Обработка ссылок футера: скролл + авто-фильтр
         document.querySelectorAll('.footer-links a[data-category]').forEach(link => {
             link.addEventListener('click', (e) => {
@@ -1371,7 +1369,7 @@
                 }
             });
         });
-        
+       
         // Toggle описаний с ARIA
         document.addEventListener('click', (e) => {
             if (e.target.closest('.toggle-description')) {
@@ -1379,29 +1377,27 @@
                 const desc = btn.previousElementSibling; // .product-full-description
                 const icon = btn.querySelector('i');
                 const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-                
+               
                 // Toggle состояния
                 btn.setAttribute('aria-expanded', !isExpanded);
                 desc.style.display = isExpanded ? 'none' : 'block';
-                
+               
                 // Динамическое обновление aria-label
                 const newLabel = isExpanded ? 'Свернуть описание' : 'Раскрыть описание';
                 btn.setAttribute('aria-label', newLabel);
-                
+               
                 // Обновление текста и иконки кнопки
                 btn.innerHTML = isExpanded
                     ? 'Свернуть <i class="fas fa-chevron-up" aria-hidden="true"></i>'
                     : 'Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i>';
             }
         });
-
         // Фильтр продуктов
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const category = btn.dataset.category;
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 document.querySelectorAll('.product-card').forEach(card => {
                     if (category === 'all' || card.dataset.category === category) {
                         card.style.display = 'flex';
@@ -1411,26 +1407,25 @@
                 });
             });
         });
-
         // Shadow на скролл
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            header.style.boxShadow = window.scrollY > 100 
-                ? '0 0.3125rem 0.9375rem var(--shadow)' 
+            header.style.boxShadow = window.scrollY > 100
+                ? '0 0.3125rem 0.9375rem var(--shadow)'
                 : '0 0.125rem 0.625rem var(--shadow)';
         });
-        
+       
         // Lazy loading покрывается нативным loading="lazy" в HTML. JS-polyfill не нужен для современных браузеров.
         // Если поддержка IE11 критична, добавьте внешний полифилл (например, via CDN: <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script> в <head>).
-                
-        /* Fallback для сломанных img в продуктах */
+               
+        /* Исправленный Fallback для сломанных img в продуктах */
         document.addEventListener('DOMContentLoaded', () => {
             const handleImageError = (img) => {
-                // Проверка: если изображение не завершено или имеет нулевую ширину (сломано)
-                if (!img.complete || img.naturalWidth === 0) {
+                // Проверяем только после load/error: если naturalWidth === 0 (пустой/сломанный файл)
+                if (img.naturalWidth === 0) {
                     const icon = img.nextElementSibling; // <i>
                     if (icon && icon.tagName === 'I') {
-                        img.style.display = 'none';
+                        img.style.display = 'none'; // Скрываем сломанное img
                         icon.style.opacity = '1';
                         icon.style.fontSize = '3rem';
                         // Опционально: меняем alt на "Изображение недоступно" для доступности
@@ -1438,12 +1433,15 @@
                     }
                 }
             };
-            
+           
             document.querySelectorAll('.product-image img').forEach(img => {
-                // Event listener для ошибки загрузки
+                // Listener для ошибки загрузки (срабатывает сразу)
                 img.addEventListener('error', () => handleImageError(img));
-                
-                // Fallback: проверьте сразу, если изображение уже "сломано" (например, кэш)
+               
+                // Listener для успешной загрузки (проверяем размер после)
+                img.addEventListener('load', () => handleImageError(img));
+               
+                // Fallback: если img уже complete (из кэша), проверим сразу
                 if (img.complete) {
                     handleImageError(img);
                 }
