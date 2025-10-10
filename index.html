@@ -1458,7 +1458,7 @@
             document.querySelectorAll('img[loading="lazy"]').forEach(img => imageObserver.observe(img));
         }
         
-        / Fallback для сломанных img в продуктах
+        /* Fallback для сломанных img в продуктах */
             document.addEventListener('DOMContentLoaded', () => {
                 document.querySelectorAll('.product-image img').forEach(img => {
                     img.addEventListener('error', () => {
