@@ -1421,22 +1421,10 @@
                 ? '0 0.3125rem 0.9375rem var(--shadow)' 
                 : '0 0.125rem 0.625rem var(--shadow)';
         });
-
-        // Lazy load fallback для старых браузеров (но native loading="lazy" покрывает)
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-            document.querySelectorAll('img[loading="lazy"]').forEach(img => imageObserver.observe(img));
-        }
         
+        // Lazy loading покрывается нативным loading="lazy" в HTML. JS-polyfill не нужен для современных браузеров.
+        // Если поддержка IE11 критична, добавьте внешний полифилл (например, via CDN: <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script> в <head>).
+                
         /* Fallback для сломанных img в продуктах */
         document.addEventListener('DOMContentLoaded', () => {
             const handleImageError = (img) => {
