@@ -1399,15 +1399,22 @@
         document.addEventListener('click', (e) => {
             if (e.target.closest('.toggle-description')) {
                 const btn = e.target.closest('.toggle-description');
-                const desc = btn.previousElementSibling;
+                const desc = btn.previousElementSibling; // .product-full-description
                 const icon = btn.querySelector('i');
                 const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-
+                
+                // Toggle состояния
                 btn.setAttribute('aria-expanded', !isExpanded);
                 desc.style.display = isExpanded ? 'none' : 'block';
-                btn.innerHTML = isExpanded 
-                    ? 'Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i>'
-                    : 'Свернуть <i class="fas fa-chevron-up" aria-hidden="true"></i>';
+                
+                // Динамическое обновление aria-label
+                const newLabel = isExpanded ? 'Свернуть описание' : 'Раскрыть описание';
+                btn.setAttribute('aria-label', newLabel);
+                
+                // Обновление текста и иконки кнопки
+                btn.innerHTML = isExpanded
+                    ? 'Свернуть <i class="fas fa-chevron-up" aria-hidden="true"></i>'
+                    : 'Подробнее <i class="fas fa-chevron-down" aria-hidden="true"></i>';
             }
         });
 
