@@ -1269,44 +1269,63 @@
                     <p>Мы готовы ответить на все ваши вопросы и предложить оптимальное решение</p>
                 </div>
                 <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Контактная информация</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Адрес</h4>
-                                    <p>г.Алматы, ул.Амангельды,59а</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Телефон</h4>
-                                    <p><a href="tel:+77022041181" style="color: inherit; text-decoration: none;">+7 (702) 204-11-81</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p><a href="mailto:aimedtechkz@gmail.com" style="color: inherit; text-decoration: none;">aimedtechkz@gmail.com</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-clock" aria-hidden="true"></i>
-                                <div>
-                                    <h4>Режим работы</h4>
-                                    <p>Пн-Пт: 9:00 - 18:00</p>
-                                </div>
-                            </div>
+                  <div class="contact-info">
+                    <h3>Контактная информация</h3>
+                    <div class="contact-details">
+                      <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <div>
+                          <h4>Адрес</h4>
+                          <p>г.Алматы, ул.Амангельды,59а</p>
                         </div>
+                      </div>
+                      <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <div>
+                          <h4>Телефон</h4>
+                          <p><a href="tel:+77022041181" style="color: inherit; text-decoration: none;">+7 (702) 204-11-81</a></p>
+                        </div>
+                      </div>
+                      <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <div>
+                          <h4>Email</h4>
+                          <p><a href="mailto:aimedtechkz@gmail.com" style="color: inherit; text-decoration: none;">aimedtechkz@gmail.com</a></p>
+                        </div>
+                      </div>
+                      <div class="contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                          <h4>Режим работы</h4>
+                          <p>Пн-Пт: 9:00 - 18:00</p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="contact-form">
-                        <iframe src="https://tally.so/r/VLE9Bg" title="Форма обратной связи" loading="lazy"></iframe>
+                  </div>
+                  <div class="contact-form">
+                    <div style="padding: 30px 20px; background: var(--light); text-align: center; border-radius: 8px;">
+                      <h3 style="margin-bottom: 20px; color: var(--dark);">Отправить сообщение</h3>
+                      <form action="https://formspree.io/f/xnnlaqjp" method="POST" style="max-width: 500px; margin: 0 auto;">
+                        
+                        <input type="text" name="name" placeholder="Ваше имя" required
+                               style="width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                        
+                        <input type="email" name="email" placeholder="Email" required
+                               style="width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                        
+                        <input type="tel" name="phone" placeholder="Телефон" required
+                               style="width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;">
+                        
+                        <textarea name="message" placeholder="Ваше сообщение" rows="5" required
+                                  style="width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;"></textarea>
+                        
+                        <button type="submit" style="background: var(--primary); color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 100%;">
+                          Отправить сообщение
+                        </button>
+                      </form>
                     </div>
+                  </div>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -1460,6 +1479,13 @@
             header.style.boxShadow = window.scrollY > 100
                 ? '0 0.3125rem 0.9375rem var(--shadow)'
                 : '0 0.125rem 0.625rem var(--shadow)';
+        });
+        // красивое уведомление после отправки
+        const form = document.querySelector('.contact form');
+        form.addEventListener('submit', function() {
+            setTimeout(() => {
+                alert('Спасибо! Мы получили ваше сообщение и ответим в ближайшее время.');
+            }, 500);
         });
        
         // Lazy loading покрывается нативным loading="lazy" в HTML. JS-polyfill не нужен для современных браузеров.
