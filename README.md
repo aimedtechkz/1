@@ -16,6 +16,6 @@
 ## Установка
 
 ```bash
-git clone https://github.com/ТВОЙ_ЮЗЕРНЕЙМ/grok-imagine-video.git
-cd grok-imagine-video
+git clone https://github.com/aimedtechkz/1.git
+cd 1
 npm install
