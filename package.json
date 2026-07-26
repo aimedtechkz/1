@@ -1,0 +1,8 @@
+{
+  "name": "grok-imagine-video",
+  "type": "module",
+  "dependencies": {
+    "ai": "latest",
+    "@ai-sdk/xai": "latest"
+  }
+}
