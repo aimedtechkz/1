@@ -1,0 +1,80 @@
+[
+  {
+    "id": "elektricheskii-ginekologicheskii-operacionnyi-stol",
+    "slug": "elektricheskii-ginekologicheskii-operacionnyi-stol",
+    "category": "gynecology",
+    "title": "Электрический гинекологический операционный стол",
+    "titleOriginal": null,
+    "excerpt": "Специализированный стол с электроприводом для гинекологических процедур.",
+    "description": "Electric gynecological operating table. Регулируемые ножные опоры, удобное положение пациента, легко моющаяся поверхность.",
+    "image": "https://aimedtech.kz/images/maya-electric-gynecological-table.jpg",
+    "imageFile": "maya-electric-gynecological-table.jpg",
+    "alt": "Электрический гинекологический стол",
+    "featured": false
+  },
+  {
+    "id": "stomatologicheskaya-ustanovka-polnyi-komplekt",
+    "slug": "stomatologicheskaya-ustanovka-polnyi-komplekt",
+    "category": "dentistry",
+    "title": "Стоматологическая установка (полный комплект)",
+    "titleOriginal": null,
+    "excerpt": "Современное кресло с LED-освещением, наконечниками и компрессором.",
+    "description": "Dental Complete Set. Включает кресло, LED-отбеливание, эндоскоп, компрессор без масла, набор наконечников. Полностью готово к работе.",
+    "image": "https://aimedtech.kz/images/maya-dental-chair.jpg",
+    "imageFile": "maya-dental-chair.jpg",
+    "alt": "Стоматологическая установка (Dental Complete Set)",
+    "featured": true
+  },
+  {
+    "id": "schelevaya-lampa-slit-lamp",
+    "slug": "schelevaya-lampa-slit-lamp",
+    "category": "ophthalmology",
+    "title": "Щелевая лампа (Slit Lamp)",
+    "titleOriginal": null,
+    "excerpt": "Профессиональная щелевая лампа для диагностики переднего отрезка глаза.",
+    "description": "Высококачественная оптика, регулируемая щель, возможность подключения камеры. Стандарт для офтальмологических кабинетов.",
+    "image": "https://aimedtech.kz/images/maya-slit-lamp.jpg",
+    "imageFile": "maya-slit-lamp.jpg",
+    "alt": "Щелевая лампа",
+    "featured": true
+  },
+  {
+    "id": "videogastroskop-kolonoskop",
+    "slug": "videogastroskop-kolonoskop",
+    "category": "diagnostics",
+    "title": "Видеогастроскоп / Колоноскоп",
+    "titleOriginal": null,
+    "excerpt": "Медицинский волоконно-оптический видеогастроскоп. Эндоскопическая система. Комплект камеры.",
+    "description": "Описание товара: Улучшение гемоглобина (HBE) - выделение кровеносных сосудов и зон с активным кровоснабжением; Подчеркивание контура и структуры - чёткое отображение границ и волокнистых структур; Регулировка цветности и яркости - по индивидуальным предпочтениям; Режимы замера экспозиции: усреднённый / пиковый; USB-функция - сохранение видео и фото в реальном времени; Стабильность изображения - устранение дефектных пикселей, чёткие замороженные кадры. Технические параметры: Параметр ВМЭ-98С ВМЭ-1300С; Диаметр дистального конца ø9,6 мм ø12,8 мм; Диаметр вставной трубки ø9,6 мм ø12,8 мм; Биопсийный канал ø2,8 мм ø3,7 мм; Рабочая длина 1050 мм 1300 мм; Глубина обзора 3–100 мм 3–100 мм; Отклонение кончика U:210° D:90° L/R:100° U:180° D:180° L/R:160°. Стандартная конфигурация: Зарядное устройство — 1 шт; Руководство пользователя — 1 шт.",
+    "image": "https://aimedtech.kz/images/Video%20Gastroscope%20Colonoscope.jpg",
+    "imageFile": "Video Gastroscope Colonoscope.jpg",
+    "alt": "Video Gastroscope Colonoscope для Урология",
+    "featured": true
+  },
+  {
+    "id": "laparoscope",
+    "slug": "laparoscope",
+    "category": "surgery",
+    "title": "Лапароскоп",
+    "titleOriginal": "Laparoscope",
+    "excerpt": "Корпус эндоскопа изготовлен из нержавеющей стали. В зеркале используются немецкое оптическое стекло, оптическое волокно и световой конус.",
+    "description": "Благодаря использованию запатентованной технологии цилиндрической линзы изображение получается четким, а поле зрения ярким. С указателями направления и сапфировыми линзами. Опциональный эндоскоп для дезинфекции плазмой высокой температуры, высокого давления и низкой температуры.",
+    "image": "https://aimedtech.kz/images/Laparoscope.jpg",
+    "imageFile": "Laparoscope.jpg",
+    "alt": "Laparoscope для Хирургия",
+    "featured": false
+  },
+  {
+    "id": "shkaf-kartotechnyi-4-yaschichnyi-seryi",
+    "slug": "shkaf-kartotechnyi-4-yaschichnyi-seryi",
+    "category": "furniture",
+    "title": "Шкаф картотечный 4-ящичный (серый)",
+    "titleOriginal": null,
+    "excerpt": "Надёжный картотечный шкаф для систематизированного хранения медицинских карт, архивных документов и важной документации.",
+    "description": "Обеспечивает полное выдвижение ящиков, центральный замок и механизм антиопрокидывания для максимальной безопасности. Идеален для регистратуры, архива и приёмного отделения. Характеристики: 1335×465×630 мм, сталь, 4 ящика, нагрузка до 30 кг/ящик, цвет RAL 7035",
+    "image": "https://aimedtech.kz/images/001.jpg",
+    "imageFile": "001.jpg",
+    "alt": "Шкаф картотечный 4-ящичный",
+    "featured": true
+  }
+]
