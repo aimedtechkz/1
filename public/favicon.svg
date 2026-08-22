@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="AiMedTech">
-  <rect width="32" height="32" rx="8" fill="#0C1416"/>
-  <!-- paper-white stroke, then teal plus — even coords so 16px is 1:1 pixels -->
-  <path fill="#F2F4F3" d="M10 4h12v6h6v12h-6v6H10v-6H4V10h6z"/>
-  <path fill="#0E5854" d="M12 6h8v6h6v8h-6v6h-8v-6H6v-8h6z"/>
-</svg>
