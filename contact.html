@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — AiMedTech</title>
+  <meta name="description" content="AiMedTech — поставка медицинского оборудования в Алматы: урология, хирургия, стоматология, диагностика, мебель. Сервис и обучение.">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="AiMedTech — на главную">
+        <span class="logo-name">AiMedTech<span class="logo-badge">МЕДОБОРУДОВАНИЕ</span></span>
+        <span class="logo-tag">АЛМАТЫ · КАЗАХСТАН</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">О компании</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="certificates.html">Сертификаты</a>
+        <a href="contact.html" class="active">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="contact.html" style="display:none" id="hdr-contact">Связаться с нами</a>
+        <a class="btn btn-gold btn-sm" href="catalog.html">Каталог</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Меню">☰</button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html">О компании</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="certificates.html">Сертификаты</a>
+      <a href="contact.html">Контакты</a>
+      <div class="btns">
+        <a class="btn btn-outline" href="contact.html">Связаться с нами</a>
+        <a class="btn btn-gold" href="catalog.html">Посмотреть каталог</a>
+      </div>
+    </div>
+  </header>
 
+<main>
+  <div class="wrap page-head">
+    <p class="eyebrow">Следующий шаг</p>
+    <h1>Давайте начнём разговор</h1>
+    <p class="text-lg muted mt-4">Подбор оборудования, сервис, тендерный пакет. Алматы, Пн–Пт, 9:00–18:00.</p>
+  </div>
+  <section class="section" style="padding-top:1rem">
+    <div class="wrap" style="display:grid;gap:3rem">
+      <div style="display:grid;gap:3rem" class="contact-layout">
+        <style>@media(min-width:1024px){.contact-layout{grid-template-columns:5fr 7fr!important}}</style>
+        <div>
+          <ul class="info-list">
+            <li class="info-item"><div class="info-icon">📍</div><div><div class="t">Адрес</div><div>г. Алматы, ул. Тимирязева, 15Б</div></div></li>
+            <li class="info-item"><div class="info-icon">📞</div><div><div class="t">Телефон / WhatsApp</div><div><a href="tel:+77022040112">+7 (702) 204-01-12</a></div></div></li>
+            <li class="info-item"><div class="info-icon">✉️</div><div><div class="t">Email</div><div><a href="mailto:info@aimedtech.kz">info@aimedtech.kz</a></div></div></li>
+            <li class="info-item"><div class="info-icon">🕐</div><div><div class="t">Режим работы</div><div>Пн–Пт, 9:00–18:00</div></div></li>
+          </ul>
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <a class="btn btn-gold" href="https://wa.me/77022040112" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-outline" href="tel:+77022040112">Позвонить</a>
+          </div>
+        </div>
+        <div class="form-box">
+          <p class="eyebrow">Заявка</p>
+          <h2 style="font-size:1.75rem">Отправить запрос</h2>
+          <p class="muted mt-2 mb-4" style="font-size:.875rem">Обычно отвечаем в тот же рабочий день.</p>
+          <form class="form" id="inquiry-form">
+            <input type="text" name="company_website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;height:0;width:0;overflow:hidden" aria-hidden="true">
+            <label><span class="lbl">Имя</span><input name="name" required autocomplete="name"></label>
+            <div class="form-row">
+              <label><span class="lbl">Email</span><input name="email" type="email" required autocomplete="email"></label>
+              <label><span class="lbl">Телефон</span><input name="phone" type="tel" required autocomplete="tel"></label>
+            </div>
+            <label><span class="lbl">Учреждение</span><input name="institution" autocomplete="organization"></label>
+            <label><span class="lbl">Сообщение</span><textarea name="message" required rows="5"></textarea></label>
+            <p class="muted" style="font-size:.75rem;margin-bottom:1rem">Отправляя форму, вы соглашаетесь на обработку данных для ответа на запрос.</p>
+            <button type="submit" class="btn btn-gold">Отправить запрос</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="name">AiMedTech</div>
+        <div class="sub">МЕДИЦИНСКОЕ ОБОРУДОВАНИЕ</div>
+        <p>Поставка оборудования для клиник Казахстана. Сервис, обучение, сопровождение закупок.</p>
+      </div>
+      <div class="footer-col">
+        <h4>РАЗДЕЛЫ</h4>
+        <ul>
+          <li><a href="index.html">О компании</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="certificates.html">Сертификаты</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>КОНТАКТЫ</h4>
+        <ul>
+          <li>г. Алматы, ул. Тимирязева, 15Б</li>
+          <li><a href="tel:+77022040112">+7 (702) 204-01-12</a></li>
+          <li><a href="mailto:info@aimedtech.kz">info@aimedtech.kz</a></li>
+          <li>Пн–Пт, 9:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 AiMedTech. Все права защищены.</span>
+      <span>Информация для специалистов здравоохранения.</span>
+    </div>
+  </footer>
+  <script src="assets/products.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
