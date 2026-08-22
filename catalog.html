@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог оборудования — AiMedTech</title>
+  <meta name="description" content="AiMedTech — поставка медицинского оборудования в Алматы: урология, хирургия, стоматология, диагностика, мебель. Сервис и обучение.">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="index.html" aria-label="AiMedTech — на главную">
+        <span class="logo-name">AiMedTech<span class="logo-badge">МЕДОБОРУДОВАНИЕ</span></span>
+        <span class="logo-tag">АЛМАТЫ · КАЗАХСТАН</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">О компании</a>
+        <a href="catalog.html" class="active">Каталог</a>
+        <a href="certificates.html">Сертификаты</a>
+        <a href="contact.html">Контакты</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline btn-sm" href="contact.html" style="display:none" id="hdr-contact">Связаться с нами</a>
+        <a class="btn btn-gold btn-sm" href="catalog.html">Каталог</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Меню">☰</button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="index.html">О компании</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="certificates.html">Сертификаты</a>
+      <a href="contact.html">Контакты</a>
+      <div class="btns">
+        <a class="btn btn-outline" href="contact.html">Связаться с нами</a>
+        <a class="btn btn-gold" href="catalog.html">Посмотреть каталог</a>
+      </div>
+    </div>
+  </header>
 
+<main>
+  <div class="wrap page-head">
+    <div class="badge" style="margin-bottom:1rem">ПОЛНЫЙ КАТАЛОГ · 152 ПОЗИЦИИ</div>
+    <div class="flex justify-between items-center flex-wrap gap-4">
+      <div style="max-width:36rem">
+        <h1>Каталог компонентов</h1>
+        <p class="text-lg muted mt-4">Мебель, диагностика, хирургия, стоматология и другие направления.</p>
+      </div>
+      <div class="search-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="search" placeholder="Поиск по названию..." aria-label="Поиск">
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="filters" id="filters"></div>
+    <p class="count-line" id="result-count">Найдено: 152</p>
+    <div class="product-grid" id="product-grid"></div>
+  </div>
+  <div style="height:4rem"></div>
+</main>
+
+  <div class="modal-overlay" id="product-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button type="button" class="modal-close" aria-label="Закрыть">✕</button>
+      <div class="modal-grid">
+        <div class="modal-img"><img src="" alt=""></div>
+        <div class="modal-info">
+          <div class="cat"></div>
+          <h2></h2>
+          <p class="short muted" style="margin-bottom:1rem"></p>
+          <div class="full"></div>
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <a class="btn btn-gold" href="contact.html">Запросить предложение</a>
+            <button type="button" class="btn btn-outline" onclick="closeModal()">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="name">AiMedTech</div>
+        <div class="sub">МЕДИЦИНСКОЕ ОБОРУДОВАНИЕ</div>
+        <p>Поставка оборудования для клиник Казахстана. Сервис, обучение, сопровождение закупок.</p>
+      </div>
+      <div class="footer-col">
+        <h4>РАЗДЕЛЫ</h4>
+        <ul>
+          <li><a href="index.html">О компании</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="certificates.html">Сертификаты</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>КОНТАКТЫ</h4>
+        <ul>
+          <li>г. Алматы, ул. Тимирязева, 15Б</li>
+          <li><a href="tel:+77022040112">+7 (702) 204-01-12</a></li>
+          <li><a href="mailto:info@aimedtech.kz">info@aimedtech.kz</a></li>
+          <li>Пн–Пт, 9:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© 2026 AiMedTech. Все права защищены.</span>
+      <span>Информация для специалистов здравоохранения.</span>
+    </div>
+  </footer>
+  <script src="assets/products.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
