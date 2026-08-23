@@ -206,14 +206,17 @@ document.addEventListener("DOMContentLoaded", () => {
   initHomeFeatured();
   initContactPrefill();
   initForm();
+
   const overlay = document.getElementById("product-modal");
   if (overlay) {
     overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
     overlay.querySelector(".modal-close")?.addEventListener("click", closeModal);
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
   }
+
   document.querySelector(".logo")?.addEventListener("click", (e) => {
-  e.preventDefault();          // не уходим сразу на главную
-  showLogoThanks();
-  setTimeout(() => { location.href = "index.html"; }, 2200);
+    e.preventDefault();
+    showLogoThanks();
+    setTimeout(() => { location.href = "index.html"; }, 2200);
+  });
 });
