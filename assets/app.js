@@ -184,6 +184,22 @@ function initForm() {
   });
 }
 
+function showLogoThanks() {
+  const logo = document.querySelector(".logo");
+  if (!logo) return;
+
+  const originalHTML = logo.innerHTML;
+
+  logo.innerHTML = `
+    <span class="logo-name" style="color:var(--accent)">Спасибо!</span>
+    <span class="logo-tag">что зашли к нам!</span>
+  `;
+
+  setTimeout(() => {
+    logo.innerHTML = originalHTML;
+  }, 2200);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initCatalog();
@@ -196,4 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.querySelector(".modal-close")?.addEventListener("click", closeModal);
     document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
   }
+  document.querySelector(".logo")?.addEventListener("click", (e) => {
+  e.preventDefault();          // не уходим сразу на главную
+  showLogoThanks();
+  setTimeout(() => { location.href = "index.html"; }, 2200);
 });
