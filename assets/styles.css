@@ -135,8 +135,23 @@ h2{font-family:var(--display);font-weight:700;font-size:clamp(1.75rem,4vw,3rem);
 .modal-close{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;border-radius:999px;border:1px solid rgba(248,248,248,.2);background:var(--ink);cursor:pointer;display:grid;place-items:center;z-index:2}
 .modal-grid{display:grid;gap:0}
 @media(min-width:768px){.modal-grid{grid-template-columns:1fr 1fr}}
-.modal-img{background:var(--ink);padding:2rem;display:grid;place-items:center;min-height:16rem}
-.modal-img img{max-height:20rem;object-fit:contain}
+.modal-img{
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 220px;
+  max-height: 50vh;
+  overflow: hidden;
+}
+.modal-img img{
+  width: 100%;
+  height: 100%;
+  max-height: 45vh;
+  object-fit: contain;
+  object-position: center;
+}
 .modal-info{padding:2rem}
 .modal-info .cat{font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent)}
 .modal-info h2{font-family:var(--display);font-size:1.75rem;margin:.5rem 0 1rem}
